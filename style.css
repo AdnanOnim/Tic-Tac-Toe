@@ -1,0 +1,62 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    justify-content: center;
+    margin-top: 20px;
+    position: relative;
+}
+.board :hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    background-color: #009087;
+}
+
+
+
+.cell {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    background-color: #f0f0f0;
+    border: 2px solid #000;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+.cell.taken {
+    cursor: not-allowed;
+}
+.winning {
+    background-color: #0e9e95f1 !important;
+    animation: winnerBlink 0.5s infinite alternate;
+}
+  
+  
+@keyframes winnerBlink {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+#status {
+    margin-top: 20px;
+    font-size: 1.5em;
+    transition: color 0.5s ease;
+}
+.winner-highlight {
+    color: #009087;
+    font-size: 4em;
+    font-weight: 900;
+    animation: winnerHighlight 3s ease-in-out;
+}
+@keyframes winnerHighlight {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
